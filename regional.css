@@ -1,0 +1,321 @@
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Grobold';
+    src: url('GROBOLD.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'HeyComic';
+    src: url('Hey Comic.ttf') format('truetype');
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    background: repeating-linear-gradient(
+        90deg,
+        #c0d8ff,
+        #c0d8ff 20px,
+        #fdf7e2 20px,
+        #fdf7e2 40px
+    );
+}
+
+.header img {
+    width: 100%;
+    height: auto;
+    display: block;
+    pointer-events: none;
+}
+
+.navbar {
+    background: #1f4c7a;
+    width: 100%;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar li {
+    position: relative;
+}
+
+.navbar a {
+    display: block;
+    padding: 15px 25px;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: 0.25s;
+    font-family: GROBOLD, sans-serif;
+}
+
+.navbar a:hover {
+    background: linear-gradient(90deg, #163758, #1a3f54);
+    transform: translateX(2px);
+    transition: all 0.3s ease;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #20486f;
+    min-width: 180px;
+    border-radius: 0 0 6px 6px;
+    overflow: hidden;
+    z-index: 999;
+}
+
+.dropdown li a {
+    padding: 12px 20px;
+    color: white;
+    white-space: nowrap;
+}
+
+ul li ul.dropdown {
+    background: #1f4c7a;
+    position: absolute;
+    display: none;
+    width: auto;
+    height: auto;
+    margin: 0px 0px;
+}
+
+ul li:hover ul.dropdown {
+    display: block;
+}
+
+.dropdown li a:hover {
+    background: #163758;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 30px;
+}
+
+.page-head {
+    animation: fadeInDown 0.8s ease-out;
+    margin-bottom: 40px;
+}
+
+.page-head h1 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #8a4b2a;
+    background: linear-gradient(135deg, #7a4320, #8a4b2a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: transform 0.3s ease;
+    margin: 0;
+    font-family: GROBOLD, sans-serif;
+}
+
+.page-head:hover h1 {
+    transform: scale(1.02);
+}
+
+.content-section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.intro-card, .example-card, .impact-card {
+    background: linear-gradient(135deg, #fdf7e2 0%, #fffbf0 100%);
+    padding: 30px;
+    border-radius: 12px;
+    border-left: 5px solid #da8e45;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
+    font-family: 'HeyComic', sans-serif;
+}
+
+.intro-card:hover,
+.example-card:hover,
+.impact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(218, 142, 69, 0.25);
+}
+
+.intro-card h2, .example-card h2, .impact-card h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #8a4b2a;
+    margin-top: 0;
+    transition: all 0.3s ease;
+}
+
+.peng {
+    text-align: justify;
+    color: #5c4a3f;
+    line-height: 1.8;
+}
+
+.intro-card:hover h2,
+.example-card:hover h2,
+.impact-card:hover h2 {
+    color: #da8e45;
+}
+
+.intro-card ul, .example-card ul, .impact-card ul {
+    color: #5c4a3f;
+    line-height: 1.8;
+}
+
+.example-item {
+    margin-bottom: 40px;
+    padding: 25px;
+    background-color: #fdf7e2;
+    border-radius: 10px;
+    border-left: 4px solid #da8e45;
+    animation: slideInUp 0.7s ease-out forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.example-item:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.example-item:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.example-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.example-item:nth-child(4) {
+    animation-delay: 0.45s;
+}
+
+.example-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    background-color: #fff5e0;
+}
+
+.example-item h3 {
+    position: relative;
+    padding-bottom: 10px;
+    display: inline-block;
+    font-size: 20px;
+    color: #8a4b2a;
+    margin: 20px 0 15px 0;
+}
+
+.example-item h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #da8e45, #8a4b2a);
+    transition: width 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 2px 8px rgba(218, 142, 69, 0.3);
+}
+
+.example-item:hover h3::after {
+    width: 100%;
+}
+
+.example-item p {
+    color: #5c4a3f;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.example-item li {
+    transition: transform 0.3s ease, color 0.3s ease;
+    color: #5c4a3f;
+}
+
+.example-item:hover li {
+    transform: translateX(6px);
+    color: #7a4320;
+}
+
+.example-img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.example-img:hover {
+    transform: scale(1.05) rotateY(2deg);
+    box-shadow: 0 12px 30px rgba(218, 142, 69, 0.3), 0 0 40px rgba(218, 142, 69, 0.15);
+}
+
+.impact-card {
+    background-color: #fff7e8;
+}
+
+.impact-card ul {
+    padding-left: 20px;
+}
+
+.impact-card li {
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    }
+    50% {
+        box-shadow: 0 8px 35px rgba(218, 142, 69, 0.15);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.intro-card, .impact-card {
+    animation: pulse 3s ease-in-out infinite;
+}
+
+.site-foot {
+    text-align: center;
+    padding: 30px 0 40px;
+    color: #6b5346;
+    background: linear-gradient(135deg, #faf6f0 0%, #f5ede5 100%);
+    border-top: 3px solid #da8e45;
+    font-size: 14px;
+    font-weight: 500;
+}

@@ -1,0 +1,207 @@
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Grobold';
+    src: url('GROBOLD.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'HeyComic';
+    src: url('Hey Comic.ttf') format('truetype');
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    background: repeating-linear-gradient(
+        90deg,
+        #c0d8ff,
+        #c0d8ff 20px,
+        #fdf7e2 20px,
+        #fdf7e2 40px
+    );
+}
+
+.header img {
+    width: 100%;
+    height: auto;
+    display: block;
+    pointer-events: none;
+}
+
+.navbar {
+    background: #1f4c7a;
+    width: 100%;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar li {
+    position: relative;
+}
+
+.navbar a {
+    display: block;
+    padding: 15px 25px;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: 0.25s;
+    font-family: GROBOLD, sans-serif;
+}
+
+.navbar a:hover {
+    background: linear-gradient(90deg, #163758, #1a3f54);
+    transform: translateX(2px);
+    transition: all 0.3s ease;
+}
+
+.dropdown{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #20486f;
+    min-width: 180px;
+    border-radius: 0 0 6px 6px;
+    overflow: hidden;
+    z-index: 999;
+}
+
+.dropdown li a {
+    padding: 12px 20px;
+    color: white;
+    white-space: nowrap;
+}
+
+ul li  ul.dropdown {
+    background: #1f4c7a;
+    position: absolute;
+    display: none;
+    width: auto;
+    height: auto;
+    margin: 0px 0px;
+}
+
+ul li:hover ul.dropdown {
+    display: block;
+}
+
+.dropdown li a:hover {
+    background: #163758;
+}
+
+
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px 60px;
+}
+
+.page-head h1 {
+    color: #7a4320;
+    font-size: 30px;
+    margin: 10px 0 6px;
+    font-family: GROBOLD, sans-serif;
+}
+
+.page-head .lead {
+    color: #5b4b3a;
+    margin-bottom: 26px;
+    font-family: HeyComic, sans-serif;
+}
+
+.solution-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.card {
+    background: linear-gradient(135deg, #fff7e8 0%, #fffbf0 100%);
+    padding: 22px 20px;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-left: 5px solid #da8e45;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(218, 142, 69, 0.3);
+    border-left-color: #c9732a;
+}
+
+.card.full {
+    grid-column: 1 / -1;
+}
+
+.card h2 {
+    font-size: 20px;
+    color: #7a4320;
+    margin-bottom: 12px;
+    transition: all 0.3s ease;
+    font-family: GROBOLD, sans-serif;
+}
+
+.card:hover h2 {
+    color: #da8e45;
+}
+
+.checklist {
+    margin: 0 0 14px 0;
+}
+
+ol.checklist {
+    list-style: decimal;
+    padding-left: 1.2rem;
+}
+
+ol.checklist li {
+    margin-bottom: 10px;
+    color: #4b3f34;
+    line-height: 1.5;
+    font-family: HeyComic, sans-serif;
+}
+
+ul.checklist {
+    list-style: none;
+    padding: 0;
+}
+
+ul.checklist li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 10px;
+    color: #4b3f34;
+    line-height: 1.5;
+}
+
+
+.goal {
+    margin-top: 6px;
+    color: #6b5346;
+    font-family: HeyComic, sans-serif;
+}
+
+.site-foot {
+    text-align: center;
+    padding: 30px 0 40px;
+    color: #6b5346;
+    background: linear-gradient(135deg, #faf6f0 0%, #f5ede5 100%);
+    border-top: 3px solid #da8e45;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+@media (max-width: 900px) {
+    .solution-grid { grid-template-columns: 1fr; }
+}
